@@ -4,33 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <header>
-      <h1>Fitness and Nutrition Tracker</h1>
-      <nav>
-        <ul>
-          <li>Nutrition</li>
-          <li>Exercise</li>
-          <li>Tracker</li>
-        </ul>
-      </nav>
-    </header>
+    <div>
+      <div>
+          <h2>Health and Fitness Tracker</h2>
+          <ul>
+              <li><a href="#nutrition">Nutrition</a></li>
+              <li><a href="#exercise">Exercise</a></li>
+              <li><a href="#tracker">Status</a></li>
+          </ul>
+      </div>
+    </div>
     <main>
-      <div>
-        <h2>Nutrition</h2>
-        <button>Add Meal</button>
-      </div>
-      <div>
-        <h2>Exercise</h2>
-        <button>Add Exercise</button>
-      </div>
-      <div>
+      <h2>Nutrition</h2>
+      <button class="btn" onclick="my_modal_2.showModal()">Add Meal</button>
+      <dialog id="my_modal_2" class="modal">
+        <div class="modal-box">
+          <h2 class="font-bold text-lg">Add Meal</h3>
+          <div>
+            <label>Meal Name</label>
+            <input class="py-4"></input>
+          </div>
+          <div>
+            <label>Meal Components</label>
+            <input class="py-4"></input>
+          </div>
+          <div>
+            <label>Date of Consumption</label>
+            <input class="py-4"></input>
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Cancel</button>
+              <button class="btn">Save</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <h2>Exercise</h2>
+      <button class="btn" onclick="my_modal_1.showModal()">Add Workout</button>
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <h2 class="font-bold text-lg">Add Workout</h3>
+          <div>
+            <label>Workout Name</label>
+            <input class="py-4"></input>
+          </div>
+          <div>
+            <label>Exercise Components</label>
+            <input class="py-4"></input>
+          </div>
+          <div>
+            <label>Date of Workout</label>
+            <input class="py-4"></input>
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Cancel</button>
+              <button class="btn">Save</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <div id="tracker">
         <h2>Today's Status</h2>
         <div></div>
       </div>
     </main>
-
-    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </body>
 </html>
