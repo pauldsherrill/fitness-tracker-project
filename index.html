@@ -4,33 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss"></style>
   </head>
   <body>
-    <header>
-      <h1>Fitness and Nutrition Tracker</h1>
-      <nav>
-        <ul>
-          <li>Nutrition</li>
-          <li>Exercise</li>
-          <li>Tracker</li>
-        </ul>
-      </nav>
-    </header>
+    <div>
+      <div class="flex flex-row m-9">
+          <h2 class="">Health and Fitness Tracker</h2>
+          <ul class="inline-flex m-10">
+              <li><a href="#nutrition">Nutrition</a></li>
+              <li><a href="#exercise">Exercise</a></li>
+              <li><a href="#tracker">Status</a></li>
+          </ul>
+      </div>
+  </div>
     <main>
-      <div>
+      <div id="nutrition">
         <h2>Nutrition</h2>
         <button>Add Meal</button>
       </div>
-      <div>
+      <div id="exercise">
         <h2>Exercise</h2>
         <button>Add Exercise</button>
       </div>
-      <div>
+      <div id="tracker">
         <h2>Today's Status</h2>
         <div></div>
       </div>
     </main>
   
-    <script src="./assets/js/homepage.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
