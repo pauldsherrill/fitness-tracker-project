@@ -30,3 +30,7 @@ function getNutrition(food) {
       console.log(data);
     });
 }
+
+$( function() {
+    $( "#dialog" ).dialog();
+  } );
