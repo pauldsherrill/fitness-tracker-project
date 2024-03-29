@@ -1,18 +1,6 @@
 // let food = document.getElementById("food-input"); //text box for food input
 // let foodOutput = document.getElementById("food-output"); //div for listing food info
 
-// Body parts:
-// 0:"back"
-// 1:"cardio"
-// 2:"chest"
-// 3:"lower arms"
-// 4:"lower legs"
-// 5:"neck"
-// 6:"shoulders"
-// 7:"upper arms"
-// 8:"upper legs"
-// 9:"waist"
-
 function getExercise() {
   fetch("https://exercisedb.p.rapidapi.com/exercises/bodyPart/back?limit=10", {
     method: "GET",
@@ -55,6 +43,6 @@ function getNutrition(food) {
     });
 }
 
-$( function() {
-    $( "#dialog" ).dialog();
-  } );
+// $( function() {
+//     $( "#dialog" ).dialog();
+//   } );
