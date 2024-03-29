@@ -1,4 +1,5 @@
-let food = "4oz cheese";
+// let food = document.getElementById("food-input"); //text box for food input
+// let foodOutput = document.getElementById("food-output"); //div for listing food info
 
 function getExercise() {
   fetch("https://exercisedb.p.rapidapi.com/exercises/bodyPart/back?limit=10", {
@@ -28,9 +29,20 @@ function getNutrition(food) {
     })
     .then(function (data) {
       console.log(data);
+      console.log(`Calories: ${data.calories}`);
+      console.log(
+        `Fat: ${data.totalNutrients.FAT.quantity.toFixed(1)} ${
+          data.totalNutrients.FAT.unit
+        }`
+      );
+      console.log(
+        `Carbohydrates: ${data.totalNutrients.CHOCDF.quantity.toFixed(1)} ${
+          data.totalNutrients.CHOCDF.unit
+        }`
+      );
     });
 }
 
-$( function() {
-    $( "#dialog" ).dialog();
-  } );
+// $( function() {
+//     $( "#dialog" ).dialog();
+//   } );
