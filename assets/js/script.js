@@ -54,3 +54,7 @@ function getNutrition(food) {
       );
     });
 }
+
+$( function() {
+    $( "#dialog" ).dialog();
+  } );
