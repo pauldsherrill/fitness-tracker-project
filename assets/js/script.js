@@ -1,4 +1,17 @@
-let food = "4oz cheese";
+// let food = document.getElementById("food-input"); //text box for food input
+// let foodOutput = document.getElementById("food-output"); //div for listing food info
+
+// Body parts:
+// 0:"back"
+// 1:"cardio"
+// 2:"chest"
+// 3:"lower arms"
+// 4:"lower legs"
+// 5:"neck"
+// 6:"shoulders"
+// 7:"upper arms"
+// 8:"upper legs"
+// 9:"waist"
 
 function getExercise() {
   fetch("https://exercisedb.p.rapidapi.com/exercises/bodyPart/back?limit=10", {
@@ -28,5 +41,16 @@ function getNutrition(food) {
     })
     .then(function (data) {
       console.log(data);
+      console.log(`Calories: ${data.calories}`);
+      console.log(
+        `Fat: ${data.totalNutrients.FAT.quantity.toFixed(1)} ${
+          data.totalNutrients.FAT.unit
+        }`
+      );
+      console.log(
+        `Carbohydrates: ${data.totalNutrients.CHOCDF.quantity.toFixed(1)} ${
+          data.totalNutrients.CHOCDF.unit
+        }`
+      );
     });
 }
