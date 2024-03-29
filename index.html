@@ -39,6 +39,20 @@
     <main> 
       <section id="nutrition" class="section is-large has-background-primary-05 has-text-primary-05-invert">
       <h2 class="is-size-1">Nutrition</h2>
+      <button class="button is-primary is-focused mb-5" onclick="my_modal_2.showModal()">Add Food to Analyze</button>
+      <dialog id="my_modal_2" class="modal">
+        <div class="modal-box">
+          <form method="dialog" id="food-input">
+            <label>Enter amount of food to get its nutrition facts!</label>
+            <input class="w-full h-12 mt-5 p-2" id="food">
+            <div class="modal-action">
+          <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Cancel</button>
+              <button class="btn" type="submit">Analyze</button>
+            </div>
+          </form>
+        </div>
+      </dialog>
       <!--Card Container-->
       <div class="card" style="width: 600px; height: 400px;">
         <div class="card-content">
@@ -46,31 +60,7 @@
           </div>
         </div>
       </div>
-      <button class="button is-primary is-focused" onclick="my_modal_2.showModal()">Add Meal</button>
-      <dialog id="my_modal_2" class="modal">
-        <div class="modal-box">
-          <h2 class="font-bold text-lg">Add Meal</h3>
-          <div>
-            <label>Meal Name</label>
-            <input class="py-4" type="text" name="meal" id="meal"></input>
-          </div>
-          <div>
-            <label>Meal Components</label>
-            <input class="py-4" type="text" name="meal" id="meal"></input>
-          </div>
-          <div>
-            <label>Date of Consumption</label>
-            <input class="py-4" type="text" name="meal" id="meal"></input>
-          </div>
-          <div class="modal-action">
-            <form method="dialog">
-          <!-- if there is a button in form, it will close the modal -->
-              <button class="btn">Cancel</button>
-              <button class="btn">Save</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
+      <button class="button is-primary is-focused">Log Meal</button>
     </section>
 
     <!--Excersise Section-->
@@ -85,20 +75,8 @@
             <input class="py-4" type="text" name="exercise" id="exercise"></input>
           </div>
           <div>
-            <label>Muscle Group</label>
-            <label for="muscle">Choose a car:</label>
-                <select id="muscle" name="muscle">
-                <option value="back">Back</option>
-                <option value="cardio">Cardio</option>
-                <option value="chest">Chest</option>
-                <option value="lower-arms">Lower Arms</option>
-                <option value="lower-legs">Back</option>
-                <option value="neck">Cardio</option>
-                <option value="shoulders">Chest</option>
-                <option value="upper-arms">Lower Arms</option>
-                <option value="upper-legs">Chest</option>
-                <option value="waist">Lower Arms</option>
-                </select>
+            <label>Exercise Components</label>
+            <input class="py-4" type="text" name="exercise" id="exercise"></input>
           </div>
           <div>
             <label>Date of Workout</label>
@@ -123,7 +101,7 @@
     </section>
 
     </main>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/stg.js"></script>
   </body>
