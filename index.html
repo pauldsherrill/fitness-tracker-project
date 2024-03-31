@@ -135,31 +135,49 @@
     <!--Exercise Section-->
     <section id="exercise" class="bg-accent hero min-h-screen flex flex-col items-start">
       <h2 class="text-6xl font-bold m-10 text-primary">Exercise</h2>
-      <button class="btn is-focused" onclick="my_modal_1.showModal()">Add Workout</button>
-      <dialog id="my_modal_1" class="modal">
-        <div class="modal-box">
-          <h2 class="font-bold text-lg">Add Workout</h3>
-          <div>
-            <label>Workout Name</label>
-            <input class="py-4" type="text" name="exercise" id="exercise"></input>
+      <div class="flex flex-row w-full mt-10 justify-around">
+        <div tabindex="0" class="rounded-lg shadow-2xl collapse collapse-open w-1/5"> 
+          <div class="font-bold text-2xl text-center m-3">
+            Choose Muscle Group
           </div>
-          <div>
-            <label>Exercise Components</label>
-            <input class="py-4" type="text" name="exercise" id="exercise"></input>
-          </div>
-          <div>
-            <label>Date of Workout</label>
-            <input class="py-4" type="text" name="exercise" id="exercise"></input>
-          </div>
-          <div class="modal-action">
-            <form method="dialog">
-          <!-- if there is a button in form, it will close the modal -->
-              <button class="btn">Cancel</button>
-              <button class="btn">Save</button>
-            </form>
-          </div>
+          <ul class="flex flex-col"> 
+            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
+          </ul>
         </div>
-      </dialog>
+      <div class="grid grid-cols-2 w-2/5">
+        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+      </div>
+      <div class="card w-96 bg-info shadow-xl w-2/5">
+        <div class="card-body">
+          <h2 class="text-center text-2xl font-bold">Title</h2>
+          <label>Instructions:</label>
+          <ul>
+            <li>1.</li>
+            <li>2.</li>
+            <li>3.</li>
+            <li>4.</li>
+          </ul>
+          <label>Notes:</label>
+          <textarea placeholder="Add workout notes here" class="h-52 bg-info border-solid border-white rounded"></textarea>
+          <button class="btn btn-primary text-base-content text-2xl">Log Exercise</button>
+        </div>
+      </div>
+    </div>
     </section>
 
     <section id="tracker" class="bg-info hero min-h-screen">
