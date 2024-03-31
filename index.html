@@ -1,88 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="synthwave">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css"/>
   </head>
-  <body><nav class="navbar is-black" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <h2 class="navbar-item">Health and Fitness Tracker</h2> 
-  <!-- Navigation Bar for Mobile -->
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-<!--Nav Bar Links-->
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-end">
-        <button class="navbar-item button has-text-primary m-4"><a href="#nutrition"> Nutrition </a></button>
-        <button class="navbar-item button has-text-primary m-4"><a href="#exercise"> Exercise </a></button>
-        <button class="navbar-item button has-text-primary m-4"><a href="#tracker"> Tracker </a></button>
-     </div>
-   </div>
- </div>
- </nav>
-<!-- First Section-->
- <section class="section is-large has-background-primary-00 has-text-primary-00-invert">
-  <div id="status">
-    <h2 class="is-size-1">Today's Status</h2>
-    <div></div>
+  <body>
+    <div class="navbar bg-base-100">
+      <div class="flex-1">
+        <a class="text-xl text-info">Health and Fitness Tracker</a>
+      </div>
+      <nav class="flex-none">
+       <ul class="menu menu-horizontal bg-base-200 rounded-box ">
+        <button class="btn text-success"><a href="#nutrition"> Nutrition </a></button>
+        <button class="btn text-success"><a href="#exercise"> Exercise </a></button>
+        <button class="btn text-success"><a href="#tracker"> Tracker </a></button>
+        </ul>
+      </nav>
+    </div>
+     
+    
+  
+ <section class="hero min-h-screen bg-base-100">
+  <div class="hero-content" id="status">
+   <div class="max-w-md">
+    <h2 class="text-8xl font-bold text-info text-left">Today's Status</h2>
   </div>
+
+    <div class="stats stats-vertical lg:stats-horizontal shadow text-primary-content">
+  
+      <div class="stat bg-primary">
+        <div class="stat-title text-4xl text-base-content">Meal</div>
+        <div class="text-base">Rice</div>
+        <div class="text-base">Veggies</div>
+        <div class="stat-desc">Total Calories:900</div>
+      </div>
+      
+      <div class="stat bg-accent">
+        <div class="stat-title text-4xl text-base-content">Workout</div>
+        <div class="text-base">4,200</div>
+        <div class="text-base">4,200</div>
+        <div class="stat-desc">↗︎ 400 (22%)</div>
+      </div>
+      
+    </div>
+  
 </section>
 
 <!--Nutrition Section-->
-    <main> 
-      <section id="nutrition" class="section is-large has-background-primary-05 has-text-primary-05-invert">
-      <h2 class="is-size-1">Nutrition</h2>
-      <button class="button is-primary is-focused mb-5" onclick="my_modal_2.showModal()">Add Food to Analyze</button>
+  <main> 
+   <section id="nutrition" class="hero min-h-screen bg-base-200 bg-primary flex flex-col items-start">
+      <h2 class="text-6xl font-bold m-10 text-accent">Nutrition</h2>
+      <!--Table Container-->
+ 
+      <div class="overflow-x m-10">
+      <div class="rounded-lg shadow-2xl">
+        <div class="card-body">
+        <table class="table table-lg">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th>
+              <th class="text-2xl text-base-content">Food</th>
+              <th class="text-2xl text-base-content">Calories</th>
+              <th class="text-2xl text-base-content">Carbs</th>
+              <th class="text-2xl text-base-content">Fats</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- row 1 -->
+            <tr> 
+              <th>1</th>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+            </tr>
+            <!-- row 2 -->
+            <tr>
+              <th>2</th>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+            </tr>
+            <!-- row 3 -->
+            <tr>
+              <th>3</th>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+            </tr>
+            <!-- row 4 -->
+            <tr>
+              <th>4</th>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+            </tr>
+            <!-- row 5 -->
+            <tr>
+              <th>5</th>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+              <td id="display-food"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="flex justify-end mt-4">
+      <button class="btn btn-secondary">Log Meal</button>
+    </div>
+  </div>
+</div>
+
+      <button class="btn btn-secondary is-focused mb-5 self-center" onclick="my_modal_2.showModal()">Add Food to Analyze</button>
       <dialog id="my_modal_2" class="modal">
-        <div class="modal-box">
-          <form method="dialog" id="food-input">
-            <label>Enter amount of food to get its nutrition facts!</label>
-            <input class="w-full h-12 mt-5 p-2" id="food">
+      <div class="modal-box">
+        <form method="dialog" id="food-input">
+          <label>Enter amount of food to get its nutrition facts!</label>
+          <input class="w-full h-12 mt-5 p-2" id="food">
             <div class="modal-action">
           <!-- if there is a button in form, it will close the modal -->
               <button class="btn">Cancel</button>
               <button class="btn" type="submit">Analyze</button>
             </div>
-          </form>
-        </div>
-      </dialog>
-      <!--Card Container-->
-      <div class="card" style="width: 600px; height: 400px;">
-        <div class="card-content">
-          <div class="fixed-grid has-4-cols">
-            <div class="grid tag">
-              <div class="cell tag is-primary is-size-5">Food</div>
-              <div class="cell tag is-primary is-size-5">Calories</div>
-              <div class="cell tag is-primary is-size-5">Carbs</div>
-              <div class="cell tag is-primary is-size-5">Fats</div>
-              <div id="display-food" class="cell tag is-warning is-light"></div>
-              <div id="display-food" class="cell tag is-warning is-light"></div>
-              <div id="display-food" class="cell tag is-warning is-light"></div>
-              <div id="display-food" class="cell tag is-warning is-light"></div>
-              <div id="display-food" class="cell tag is-warning is-light"></div>
-              <div id="display-food" class="cell tag is-warning is-light"></div>
-              <div id="display-food" class="cell tag is-warning is-light"></div>
-              <div id="display-food" class="cell tag is-warning is-light"></div>
-          
-            </div>
-          </div>
-          </div>
-        </div>
+        </form>
       </div>
-      <button class="button is-primary is-focused">Log Meal</button>
-    </section>
+    </dialog>
+</div>
+</section>
 
-    <!--Excersise Section-->
-    <section id="exercise" class="section is-large has-background-primary-75 has-text-primary-75-invert">
-      <h2 class="is-size-1">Exercise</h2>
-      <button class="button is-focused" onclick="my_modal_1.showModal()">Add Workout</button>
+    <!--Exercise Section-->
+    <section id="exercise" class="bg-accent hero min-h-screen flex flex-col items-start">
+      <h2 class="text-6xl font-bold m-10 text-primary">Exercise</h2>
+      <button class="btn is-focused" onclick="my_modal_1.showModal()">Add Workout</button>
       <dialog id="my_modal_1" class="modal">
         <div class="modal-box">
           <h2 class="font-bold text-lg">Add Workout</h3>
@@ -109,9 +162,9 @@
       </dialog>
     </section>
 
-    <section id="tracker" class="section is-large">
+    <section id="tracker" class="bg-info hero min-h-screen">
       <div id="tracker">
-        <h2 class="is-size-1 mb-2 pb-6">Track Your Weekly Progress!</h2>
+        <h2 class="text-5xl font-bold mb-10">Track Your Weekly Progress!</h2>
         <div> <img src="./tracker.png" alt="An image of a weekly tracker" style="width: 1200px; height: 600px;"/></div>
       </div>
     </section>
@@ -121,11 +174,9 @@
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/stg.js"></script>
   </body>
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Gains</strong> by <a>The Quad</a>
-      </p>
-    </div>
+  <footer class="footer footer-center p-4 bg-info text-base-300">
+    <aside>
+      <p> Copyright © 2024 - <strong>Gains</strong> by The Quad </p>
+    </aside>
   </footer>
 </html>
