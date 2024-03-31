@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body><nav class="navbar is-black" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -70,7 +71,6 @@
               <div id="display-food" class="cell tag is-warning is-light"></div>
               <div id="display-food" class="cell tag is-warning is-light"></div>
               <div id="display-food" class="cell tag is-warning is-light"></div>
-          
             </div>
           </div>
           </div>
@@ -82,31 +82,37 @@
     <!--Excersise Section-->
     <section id="exercise" class="section is-large has-background-primary-75 has-text-primary-75-invert">
       <h2 class="is-size-1">Exercise</h2>
-      <button class="button is-focused" onclick="my_modal_1.showModal()">Add Workout</button>
-      <dialog id="my_modal_1" class="modal">
-        <div class="modal-box">
-          <h2 class="font-bold text-lg">Add Workout</h3>
-          <div>
-            <label>Workout Name</label>
-            <input class="py-4" type="text" name="exercise" id="exercise"></input>
-          </div>
-          <div>
-            <label>Exercise Components</label>
-            <input class="py-4" type="text" name="exercise" id="exercise"></input>
-          </div>
-          <div>
-            <label>Date of Workout</label>
-            <input class="py-4" type="text" name="exercise" id="exercise"></input>
-          </div>
-          <div class="modal-action">
-            <form method="dialog">
-          <!-- if there is a button in form, it will close the modal -->
-              <button class="btn">Cancel</button>
-              <button class="btn">Save</button>
-            </form>
-          </div>
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn m-1">Choose Muscle Group</div>
+          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a>Item 1</a></li>
+            <li><a>Item 2</a></li>
+          </ul>
         </div>
-      </dialog>
+      </div>
+      <div class="grid grid-cols-2 gap-2 w-50">
+          <button>Cell 1</button>
+          <button>Cell 2</button>
+          <button>Cell 3</button>
+          <button>Cell 4</button>
+          <button>Cell 5</button>
+          <button>Cell 6</button>
+          <button>Cell 7</button>
+          <button>Cell 8</button>
+          <button>Cell 9</button>
+          <button>Cell 10</button>
+          <button>Cell 11</button>
+          <button>Cell 12</button>
+      </div>
+      <div class="box instructions-styling">
+          <h2>Title</h2>
+          <label>Instructions:</label>
+          <ul>
+            <li>1.</li>
+            <li>2.</li>
+            <li>3.</li>
+          </ul>
+      </div>
     </section>
 
     <section id="tracker" class="section is-large">
