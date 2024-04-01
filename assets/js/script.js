@@ -1,6 +1,12 @@
 let getFoodEl = document.getElementById("food-input");
 let foodListEl = document.getElementById("display-food");
 let exerciseEl = document.getElementById("exercises");
+let bodyPartEl = document.getElementById("body-part-list");
+let exerciseListEl = document.getElementById("exercise-list");
+let exerciseTitleEl = document.getElementById("exercise-title");
+let exerciseInstructionsEl = document.getElementById("exercise-instructions");
+
+let foodNumber = 0;
 
 function getExercise(bodyPart) {
   fetch(
@@ -19,7 +25,25 @@ function getExercise(bodyPart) {
     .then(function (data) {
       console.log(data);
 
-      createExerciseList(data);
+      populateExercises(data);
+    });
+}
+
+function listBodyParts() {
+  fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPartList`, {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "8f9fccef91msh7afbf4517485a88p1ef2d0jsn27c16dc7f653",
+      "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+    },
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+
+      renderBodyPartList(data);
     });
 }
 
@@ -71,8 +95,9 @@ function createFoodRow(food) {
   foodListEl.appendChild(tr);
 
   let th = document.createElement("th");
-  th.textContent = 1;
+  th.textContent = foodNumber + 1;
   tr.appendChild(th);
+  foodNumber++;
 
   let td0 = document.createElement("td");
   td0.textContent = food.name;
@@ -91,26 +116,65 @@ function createFoodRow(food) {
   tr.appendChild(td2);
 }
 
-function createExerciseList(data) {
+function renderBodyPartList(data) {
   for (i = 0; i < 10; i++) {
-    div = document.createElement("div");
-    h1 = document.createElement("h1");
-    p = document.createElement("p");
-    p1 = document.createElement("p");
+    let bodyPart = data[i];
 
-    h1.textContent = data[i].bodyPart;
-    p.textContent = data[i].equipment;
-    p1.textContent = `Instructions: ${data[i].instructions}`;
+    let button = document.createElement("button");
+    button.setAttribute(
+      "class",
+      "btn btn-accent text-base-content text-2xl m-2"
+    );
+    button.textContent = data[i].charAt(0).toUpperCase() + data[i].slice(1);
 
-    div.appendChild(h1);
-    div.appendChild(p);
-    div.appendChild(p1);
+    button.addEventListener("click", function () {
+      getExercise(bodyPart);
+    });
 
-    exerciseEl.appendChild(div);
+    bodyPartEl.appendChild(button);
   }
 }
 
-getFoodEl.addEventListener("submit", function (event) {
+function populateExercises(data) {
+  exerciseListEl.innerHTML = "";
+
+  for (i = 0; i < data.length; i++) {
+    let exercise = data[i];
+
+    let button = document.createElement("button");
+    button.setAttribute(
+      "class",
+      "btn btn-primary text-base-content text-2xl m-2 btn-lg"
+    );
+    button.textContent =
+      exercise.name.charAt(0).toUpperCase() + exercise.name.slice(1);
+    button.addEventListener("click", function () {
+      renderInstructions(exercise);
+    });
+    exerciseListEl.appendChild(button);
+  }
+}
+
+function renderInstructions(exercise) {
+  exerciseTitleEl.innerHTML = "";
+  exerciseInstructionsEl.innerHTML = "";
+
+  let instruct = exercise.instructions;
+  console.log(instruct);
+
+  exerciseTitleEl.textContent = exercise.name;
+
+  for (i = 0; i < instruct.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = instruct[i];
+
+    exerciseInstructionsEl.appendChild(li);
+  }
+}
+
+listBodyParts();
+
+getFoodEl.addEventListener("submit", function () {
   //   event.preventDefault();
 
   let food = document.getElementById("food").value;

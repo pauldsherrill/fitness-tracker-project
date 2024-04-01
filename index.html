@@ -70,41 +70,7 @@
           </thead>
           <tbody id="display-food">
             <!-- row 1 -->
-            <tr> 
-              <th>1</th>
-              <td ></td>
-              <td ></td>
-              <td ></td>
-            </tr>
-            <!-- row 2 -->
-            <tr>
-              <th>2</th>
-              <td ></td>
-              <td ></td>
-              <td ></td>
-              <td ></td>
-            </tr>
-            <!-- row 3 -->
-            <tr>
-              <th>3</th>
-              <td ></td>
-              <td ></td>
-              <td ></td>
-            </tr>
-            <!-- row 4 -->
-            <tr>
-              <th>4</th>
-              <td ></td>
-              <td ></td>
-              <td ></td>
-            </tr>
-            <!-- row 5 -->
-            <tr>
-              <th>5</th>
-              <td ></td>
-              <td ></td>
-              <td ></td>
-            </tr>
+            
           </tbody>
         </table>
       </div>
@@ -140,38 +106,20 @@
           <div class="font-bold text-2xl text-center m-3">
             Choose Muscle Group
           </div>
-          <ul class="flex flex-col"> 
-            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2">Muscle</button>
+          <ul class="flex flex-col" id="body-part-list"> 
+            <!-- body part buttons -->
           </ul>
         </div>
-      <div class="grid grid-cols-2 w-2/5">
-        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
-        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
-        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
-        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
-        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
-        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
-        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
-        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
-        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
-        <button class="btn btn-primary text-base-content text-2xl m-2">exercise</button>
+      <div class="grid grid-cols-2 w-2/5" id="exercise-list">
+           <!-- exercise list buttons -->
       </div>
       <div class="card w-96 bg-info shadow-xl w-2/5">
         <div class="card-body">
-          <h2 class="text-center text-2xl font-bold">Title</h2>
+          <h2 class="text-center text-2xl font-bold">Title: <span id="exercise-title"></span></h2>
           <label>Instructions:</label>
-          <ul>
-            <li>1.</li>
-            <li>2.</li>
-            <li>3.</li>
-            <li>4.</li>
-          </ul>
+          <ol id="exercise-instructions">
+              <!-- instructions li elements -->
+          </ol>
           <label>Notes:</label>
           <textarea placeholder="Add workout notes here" class="h-52 bg-info border-solid border-white rounded"></textarea>
           <button class="btn btn-primary text-base-content text-2xl">Log Exercise</button>
