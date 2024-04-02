@@ -5,7 +5,6 @@ let bodyPartEl = document.getElementById("body-part-list");
 let exerciseListEl = document.getElementById("exercise-list");
 let exerciseTitleEl = document.getElementById("exercise-title");
 let exerciseInstructionsEl = document.getElementById("exercise-instructions");
-const hoverImageContainer = document.getElementById("hoverImageContainer");
 
 let foodNumber = 0;
 
@@ -49,6 +48,7 @@ function listBodyParts() {
 }
 
 function getNutrition(food) {
+  let enteredFood = food;
   fetch(
     `https://api.edamam.com/api/nutrition-data?app_id=5a6e7bf2&app_key=52684844a0926b1e1b43dd3c939b92ad&nutrition-type=cooking&ingr=${food}`,
     {
@@ -61,7 +61,7 @@ function getNutrition(food) {
     .then(function (data) {
       console.log(data);
 
-      console.log(`Food: ${data.ingredients[0].text}`);
+      console.log(`Food: ${enteredFood}`);
       console.log(`Calories: ${data.calories}`);
       console.log(
         `Fat: ${data.totalNutrients.FAT.quantity.toFixed(1)} ${
@@ -75,7 +75,7 @@ function getNutrition(food) {
       );
 
       let food = {
-        name: data.ingredients[0].text,
+        name: enteredFood, // previously data.ingredients[0].text
         calories: data.calories,
         fat: `${data.totalNutrients.FAT.quantity.toFixed(1)} ${
           data.totalNutrients.FAT.unit
@@ -152,16 +152,6 @@ function populateExercises(data) {
     button.addEventListener("click", function () {
       renderInstructions(exercise);
     });
-    button.addEventListener("mouseover", function (event) {
-      const mouseX = event.clientX;
-      const mouseY = event.clientY;
-      hoverImageContainer.style.display = "block";
-      hoverImageContainer.style.left = mouseX + "px";
-      hoverImageContainer.style.top = mouseY + "px";
-    });
-    button.addEventListener("mouseout", function () {
-      hoverImageContainer.style.display = "none";
-    });
     exerciseListEl.appendChild(button);
   }
 }
@@ -184,7 +174,7 @@ function renderInstructions(exercise) {
   }
 }
 
-listBodyParts();
+// listBodyParts();
 
 getFoodEl.addEventListener("submit", function () {
   //   event.preventDefault();

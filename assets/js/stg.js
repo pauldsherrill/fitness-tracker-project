@@ -1,36 +1,36 @@
-const mealInput = document.querySelector('#meal');
-const exerciseInput = document.querySelector('#exercise');
+const mealInput = document.querySelector("#meal");
+const exerciseInput = document.querySelector("#exercise");
 
-renderLastRegistered();
+// renderLastRegistered();
 
-AddMealButton.addEventListener('click', function (event) {
-    event.preventDefault();
-  
-    const meal = mealInput.value;
-  
-    if (meal === '') {
-      displayMessage('error', 'meal cannot be blank');
-    } else {
-      displayMessage('success', 'Registered successfully');
-  
-      localStorage.setItem('exercise', email);
+AddMealButton.addEventListener("click", function (event) {
+  event.preventDefault();
 
-      renderLastRegistered();
-    }
-  });
+  const meal = mealInput.value;
 
-  AddExerciseButton.addEventListener('click', function (event) {
-    event.preventDefault();
-  
-    const exercise = exerciseInput.value;
-  
-    if (exercise === '') {
-      displayMessage('error', 'exercise cannot be blank');
-    } else {
-      displayMessage('success', 'Registered successfully');
-  
-      localStorage.setItem('exercise', email);
+  if (meal === "") {
+    displayMessage("error", "meal cannot be blank");
+  } else {
+    displayMessage("success", "Registered successfully");
 
-      renderLastRegistered();
-    }
-  });
+    localStorage.setItem("exercise", email);
+
+    renderLastRegistered();
+  }
+});
+
+AddExerciseButton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const exercise = exerciseInput.value;
+
+  if (exercise === "") {
+    displayMessage("error", "exercise cannot be blank");
+  } else {
+    displayMessage("success", "Registered successfully");
+
+    localStorage.setItem("exercise", email);
+
+    renderLastRegistered();
+  }
+});
