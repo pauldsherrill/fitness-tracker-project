@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Health and Fitness Tracker</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body>
     <div class="navbar bg-base-100">
@@ -133,7 +134,14 @@
             Choose Muscle Group
           </div>
           <ul class="flex flex-col" id="body-part-list"> 
-            <!-- body part buttons -->
+            <button class="btn btn-accent text-base-content text-2xl m-2">Abs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Back</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Biceps</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Chest</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Legs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Quads</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Shoulders</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Triceps</button>
           </ul>
         </div>
       <div class="grid grid-cols-2 w-2/5" id="exercise-list">
@@ -141,9 +149,10 @@
       </div>
       <div class="card w-96 bg-info shadow-xl w-2/5">
         <div class="card-body">
-          <h2 class="text-center text-2xl font-bold">Title: <span id="exercise-title"></span></h2>
+          <h2 class="text-center text-2xl font-bold"><span id="exercise-title"></span></h2>
+          
           <label>Instructions:</label>
-          <ol id="exercise-instructions">
+          <ol id="exercise-instructions" style="list-style: auto;">
               <!-- instructions li elements -->
           </ol>
           <label>Notes:</label>
