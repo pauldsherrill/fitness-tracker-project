@@ -36,61 +36,60 @@
         </div>
       </nav>
     </div>
-
-    
      
- <section class="hero min-h-screen bg-base-100">
-  <div class="hero-content flex-col lg:flex-row" id="status">
-   <div class="max-w-md">
-    <h2 class="text-8xl font-bold text-info text-center">Today's Status</h2>
-   </div>
-
-    <div class="stats stats-horizontal shadow text-primary-content">
-   <!--Meal Stat-->
-   <div class="stat bg-primary">
-    <div class="stat-title text-4xl text-base-content font-bold">Meals</div>
-    <div class="flex flex-row">
-      <div class="text-black mt-5 mr-2">Food Placeholder</div>
-      <div class="stat-desc mt-6">40cal</div>
-    </div>
-    <div class="flex flex-row">
-      <div class="text-black mt-5 mr-2">Food Placeholder</div>
-      <div class="stat-desc mt-6">40cal</div>
-    </div>
-    <div class="flex flex-row">
-      <div class="mt-5 mr-5">Total Calories:</div>
-      <div class="mt-5">80</div>
-    </div>
-  </div>
-  
-  <div class="stat bg-accent rounded-r-2xl">
-    <div class="stat-title text-4xl text-base-content font-bold">Exercises</div>
-    <div>
-      <div class="text-black mt-5">Exercise Placeholder</div>
-      <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
-    </div>
-    <div>
-      <div class="text-black mt-5">Exercise Placeholder</div>
-      <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
-    </div>
-    <div>
-      <div class="text-black mt-5">Exercise Placeholder</div>
-      <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
-    </div>
-  </div>
-  
-</div>
- 
+    <section class="hero min-h-screen bg-base-100">
+      <div class="hero-content" id="status">
+       <div class="max-w-md">
+        <h2 class="text-8xl font-bold text-info text-left">Today's Status</h2>
+      </div>
+    
+        <div class="stats stats-vertical lg:stats-horizontal shadow">
+      
+          <div class="stat bg-primary">
+            <div class="stat-title text-4xl text-base-content font-bold">Meals</div>
+            <div class="flex flex-row">
+              <div class="text-black mt-5 mr-2">Food Placeholder</div>
+              <div class="stat-desc mt-6">40cal</div>
+            </div>
+            <div class="flex flex-row">
+              <div class="text-black mt-5 mr-2">Food Placeholder</div>
+              <div class="stat-desc mt-6">40cal</div>
+            </div>
+            <div class="flex flex-row">
+              <div class="mt-5 mr-5">Total Calories:</div>
+              <div class="mt-5">80</div>
+            </div>
+          </div>
+          
+          <div class="stat bg-accent rounded-r-2xl">
+            <div class="stat-title text-4xl text-base-content font-bold">Exercises</div>
+            <div>
+              <div class="text-black mt-5">Exercise Placeholder</div>
+              <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+            </div>
+            <div>
+              <div class="text-black mt-5">Exercise Placeholder</div>
+              <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+            </div>
+            <div>
+              <div class="text-black mt-5">Exercise Placeholder</div>
+              <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+            </div>
+          </div>
+          
+        </div>
+      
+    </section>
 
 <!--Nutrition Section-->
   <main> 
    <section id="nutrition" class="hero min-h-screen bg-base-200 bg-primary flex flex-col items-center justify-center">
       <h2 class="text-7xl font-bold mt-0 mb-8 text-warning"> Nutrition</h2>
       <!--Table Container-->
-      <div class="card card-normal bg-primary text-primary-content rounded-lg shadow-2xl">
+      <div class="card w-100 bg-primary text-primary-content rounded-lg shadow-2xl">
        <div class="card-body">
         <div class="overflow-x">
-         <table class="table w-full overflow-x">
+         <table class="table table-lg">
           <!-- head -->
           <thead>
             <tr>
@@ -117,8 +116,7 @@
       <button class="btn btn-default mb-4 ml-4">Delete</button>
       <button id="log-meal" class="btn btn-secondary mb-4 mr-4">Log Meal</button>
     </div>
-  
-</div>
+  </div>
 </div>
 </div>
 </div>
@@ -148,6 +146,24 @@
           <div class="font-bold text-2xl text-center m-3">
             Choose Muscle Group
           </div>
+          <!-- Dropdown Button for Smaller Screens -->
+        <div class="dropdown lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            <!-- Hamburger Menu Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />Choose Muscle Group</svg>
+          </div>
+          <!-- Dropdown Content -->
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 top-0 right-0">
+            <button class="btn btn-accent text-base-content text-2xl m-2">Abs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Back</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Biceps</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Chest</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Legs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Quads</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Shoulders</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Triceps</button>
+          </ul>
+        </div>
           <ul class="flex flex-col" id="body-part-list"> 
             <button class="btn btn-accent text-base-content text-2xl m-2">Abs</button>
             <button class="btn btn-accent text-base-content text-2xl m-2">Back</button>
@@ -162,7 +178,7 @@
       <div class="grid grid-cols-2 w-2/5" id="exercise-list">
            <!-- exercise list buttons -->
       </div>
-      <div class="card w-96 bg-info shadow-xl w-2/5">
+      <div class="card w-96 bg-info shadow-xl w-2/5 h-3/5">
         <div class="card-body">
           <h2 class="text-center text-2xl font-bold"><span id="exercise-title"></span></h2>
           
