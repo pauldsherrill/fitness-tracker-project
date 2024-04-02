@@ -48,6 +48,7 @@ function listBodyParts() {
 }
 
 function getNutrition(food) {
+  let enteredFood = food;
   fetch(
     `https://api.edamam.com/api/nutrition-data?app_id=5a6e7bf2&app_key=52684844a0926b1e1b43dd3c939b92ad&nutrition-type=cooking&ingr=${food}`,
     {
@@ -60,7 +61,7 @@ function getNutrition(food) {
     .then(function (data) {
       console.log(data);
 
-      console.log(`Food: ${data.ingredients[0].text}`);
+      console.log(`Food: ${enteredFood}`);
       console.log(`Calories: ${data.calories}`);
       console.log(
         `Fat: ${data.totalNutrients.FAT.quantity.toFixed(1)} ${
@@ -74,7 +75,7 @@ function getNutrition(food) {
       );
 
       let food = {
-        name: data.ingredients[0].text,
+        name: enteredFood, // previously data.ingredients[0].text
         calories: data.calories,
         fat: `${data.totalNutrients.FAT.quantity.toFixed(1)} ${
           data.totalNutrients.FAT.unit
@@ -144,7 +145,7 @@ function populateExercises(data) {
     let button = document.createElement("button");
     button.setAttribute(
       "class",
-      "btn btn-primary text-base-content text-2xl m-2 btn-lg"
+      "btn btn-primary text-base-content text-base m-2 btn-lg"
     );
     button.textContent =
       exercise.name.charAt(0).toUpperCase() + exercise.name.slice(1);
@@ -162,7 +163,8 @@ function renderInstructions(exercise) {
   let instruct = exercise.instructions;
   console.log(instruct);
 
-  exerciseTitleEl.textContent = exercise.name;
+  exerciseTitleEl.textContent =
+    exercise.name.charAt(0).toUpperCase() + exercise.name.slice(1);
 
   for (i = 0; i < instruct.length; i++) {
     let li = document.createElement("li");
@@ -172,7 +174,7 @@ function renderInstructions(exercise) {
   }
 }
 
-listBodyParts();
+// listBodyParts();
 
 getFoodEl.addEventListener("submit", function () {
   //   event.preventDefault();
