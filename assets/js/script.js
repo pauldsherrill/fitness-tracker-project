@@ -183,3 +183,5 @@ getFoodEl.addEventListener("submit", function () {
 
   getNutrition(food);
 });
+
+
