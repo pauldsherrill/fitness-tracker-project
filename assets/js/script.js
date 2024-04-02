@@ -100,10 +100,6 @@ function createFoodRow(food) {
   tr.appendChild(th);
   foodNumber++;
 
-  let td4 = document.createElement("input");
-  td0.addClass('checkbox');
-  tr.appendChild(td4);
-
   let td0 = document.createElement("td");
   td0.textContent = food.name;
   tr.appendChild(td0);
