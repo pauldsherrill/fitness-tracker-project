@@ -28,20 +28,26 @@
     <h2 class="text-8xl font-bold text-info text-left">Today's Status</h2>
   </div>
 
-    <div class="stats stats-vertical lg:stats-horizontal shadow text-primary-content">
+    <div class="stats stats-vertical lg:stats-horizontal shadow">
   
       <div class="stat bg-primary">
         <div class="stat-title text-4xl text-base-content">Meal</div>
-        <div class="text-base">Rice</div>
-        <div class="text-base">Veggies</div>
-        <div class="stat-desc">Total Calories:900</div>
+        <div class="flex flex-row">
+          <div class="text-black mt-5 mr-2">Placeholder</div>
+          <div class="stat-desc mt-6">40cal</div>
+        </div>
+        <div class="flex flex-row">
+          <div class="mt-5 mr-5">Total Calories:</div>
+          <div class="mt-5">80</div>
+        </div>
       </div>
       
       <div class="stat bg-accent">
         <div class="stat-title text-4xl text-base-content">Workout</div>
-        <div class="text-base">4,200</div>
-        <div class="text-base">4,200</div>
-        <div class="stat-desc">↗︎ 400 (22%)</div>
+        <div>
+          <div class="text-black">Exercise Placeholder</div>
+          <div class="text-base">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+        </div>
       </div>
       
     </div>
@@ -102,7 +108,7 @@
     <section id="exercise" class="bg-accent hero min-h-screen flex flex-col items-start">
       <h2 class="text-6xl font-bold m-10 text-primary">Exercise</h2>
       <div class="flex flex-row w-full mt-10 justify-around">
-        <div tabindex="0" class="rounded-lg shadow-2xl collapse collapse-open w-1/5"> 
+        <div tabindex="0" class="rounded-lg shadow-2xl collapse collapse-open w-1/5 h-4/5 mb-20"> 
           <div class="font-bold text-2xl text-center m-3">
             Choose Muscle Group
           </div>
@@ -113,9 +119,9 @@
       <div class="grid grid-cols-2 w-2/5" id="exercise-list">
            <!-- exercise list buttons -->
       </div>
-      <div class="card w-96 bg-info shadow-xl w-2/5">
+      <div class="card w-96 bg-info shadow-xl w-2/5 h-3/5 mb-20">
         <div class="card-body">
-          <h2 class="text-center text-2xl font-bold">Title: <span id="exercise-title"></span></h2>
+          <h2 class="text-center text-2xl font-bold"><span id="exercise-title"></span></h2>
           <label>Instructions:</label>
           <ol id="exercise-instructions">
               <!-- instructions li elements -->
