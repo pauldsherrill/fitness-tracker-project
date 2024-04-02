@@ -5,6 +5,7 @@ let bodyPartEl = document.getElementById("body-part-list");
 let exerciseListEl = document.getElementById("exercise-list");
 let exerciseTitleEl = document.getElementById("exercise-title");
 let exerciseInstructionsEl = document.getElementById("exercise-instructions");
+const hoverImageContainer = document.getElementById("hoverImageContainer");
 
 let foodNumber = 0;
 
@@ -151,6 +152,16 @@ function populateExercises(data) {
     button.addEventListener("click", function () {
       renderInstructions(exercise);
     });
+    button.addEventListener("mouseover", function (event) {
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+      hoverImageContainer.style.display = "block";
+      hoverImageContainer.style.left = mouseX + "px";
+      hoverImageContainer.style.top = mouseY + "px";
+    });
+    button.addEventListener("mouseout", function () {
+      hoverImageContainer.style.display = "none";
+    });
     exerciseListEl.appendChild(button);
   }
 }
@@ -162,7 +173,8 @@ function renderInstructions(exercise) {
   let instruct = exercise.instructions;
   console.log(instruct);
 
-  exerciseTitleEl.textContent = exercise.name;
+  exerciseTitleEl.textContent =
+    exercise.name.charAt(0).toUpperCase() + exercise.name.slice(1);
 
   for (i = 0; i < instruct.length; i++) {
     let li = document.createElement("li");
