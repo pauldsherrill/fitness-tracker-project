@@ -21,33 +21,52 @@
       </nav>
     </div>
      
+
     
   
- <section class="hero min-h-screen bg-base-100">
-  <div class="hero-content" id="status">
-   <div class="max-w-md">
-    <h2 class="text-8xl font-bold text-info text-left">Today's Status</h2>
-  </div>
-
-    <div class="stats stats-vertical lg:stats-horizontal shadow text-primary-content">
-  
-      <div class="stat bg-primary">
-        <div class="stat-title text-4xl text-base-content">Meal</div>
-        <div class="text-base">Rice</div>
-        <div class="text-base">Veggies</div>
-        <div class="stat-desc">Total Calories:900</div>
+    <section class="hero min-h-screen bg-base-100">
+      <div class="hero-content" id="status">
+       <div class="max-w-md">
+        <h2 class="text-8xl font-bold text-info text-left">Today's Status</h2>
       </div>
+    
+        <div class="stats stats-vertical lg:stats-horizontal shadow">
       
-      <div class="stat bg-accent">
-        <div class="stat-title text-4xl text-base-content">Workout</div>
-        <div class="text-base">4,200</div>
-        <div class="text-base">4,200</div>
-        <div class="stat-desc">↗︎ 400 (22%)</div>
-      </div>
+          <div class="stat bg-primary">
+            <div class="stat-title text-4xl text-base-content font-bold">Meals</div>
+            <div class="flex flex-row">
+              <div class="text-black mt-5 mr-2">Food Placeholder</div>
+              <div class="stat-desc mt-6">40cal</div>
+            </div>
+            <div class="flex flex-row">
+              <div class="text-black mt-5 mr-2">Food Placeholder</div>
+              <div class="stat-desc mt-6">40cal</div>
+            </div>
+            <div class="flex flex-row">
+              <div class="mt-5 mr-5">Total Calories:</div>
+              <div class="mt-5">80</div>
+            </div>
+          </div>
+          
+          <div class="stat bg-accent rounded-r-2xl">
+            <div class="stat-title text-4xl text-base-content font-bold">Exercises</div>
+            <div>
+              <div class="text-black mt-5">Exercise Placeholder</div>
+              <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+            </div>
+            <div>
+              <div class="text-black mt-5">Exercise Placeholder</div>
+              <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+            </div>
+            <div>
+              <div class="text-black mt-5">Exercise Placeholder</div>
+              <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+            </div>
+          </div>
+          
+        </div>
       
-    </div>
-  
-</section>
+    </section>
 
 <!--Nutrition Section-->
   <main> 
@@ -82,7 +101,7 @@
     </div>
     <div class="flex justify-between mt-4">
       <button class="btn btn-default mb-4 ml-4">Delete</button>
-      <button class="btn btn-secondary mb-4 mr-4">Log Meal</button>
+      <button id="log-meal" class="btn btn-secondary mb-4 mr-4">Log Meal</button>
     </div>
   </div>
 </div>
@@ -138,7 +157,7 @@
           </ol>
           <label>Notes:</label>
           <textarea placeholder="Add workout notes here" class="h-52 bg-info border-solid border-white rounded"></textarea>
-          <button class="btn btn-primary text-base-content text-2xl">Log Exercise</button>
+          <button id="log-exercise" class="btn btn-primary text-base-content text-2xl">Log Exercise</button>
         </div>
       </div>
     </div>
