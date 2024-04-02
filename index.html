@@ -10,20 +10,33 @@
   <body>
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a class="text-xl text-info">Health and Fitness Tracker</a>
+        <a class="text-2xl text-info">Health and Fitness Tracker</a>
       </div>
       <nav class="flex-none">
-       <ul class="menu menu-horizontal bg-base-200 rounded-box ">
-        <button class="btn text-success"><a href="#nutrition"> Nutrition </a></button>
-        <button class="btn text-success"><a href="#exercise"> Exercise </a></button>
-        <button class="btn text-success"><a href="#tracker"> Tracker </a></button>
-        </ul>
+        <!-- Dropdown Button for Smaller Screens -->
+        <div class="dropdown lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            <!-- Hamburger Menu Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+          </div>
+          <!-- Dropdown Content -->
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 top-0 right-0">
+            <li><a class="btn text-error" href="#nutrition">Nutrition</a></li>
+            <li><a class="btn text-error" href="#exercise">Exercise</a></li>
+            <li><a class="btn text-error" href="#tracker">Tracker</a></li>
+          </ul>
+        </div>
+        <!-- Navbar Links for Larger Screens -->
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a class="btn text-success" href="#nutrition">Nutrition</a></li>
+            <li><a class="btn text-success" href="#exercise">Exercise</a></li>
+            <li><a class="btn text-success" href="#tracker">Tracker</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
      
-
-    
-  
     <section class="hero min-h-screen bg-base-100">
       <div class="hero-content" id="status">
        <div class="max-w-md">
@@ -133,6 +146,24 @@
           <div class="font-bold text-2xl text-center m-3">
             Choose Muscle Group
           </div>
+          <!-- Dropdown Button for Smaller Screens -->
+        <div class="dropdown lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            <!-- Hamburger Menu Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />Choose Muscle Group</svg>
+          </div>
+          <!-- Dropdown Content -->
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 top-0 right-0">
+            <button class="btn btn-accent text-base-content text-2xl m-2">Abs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Back</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Biceps</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Chest</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Legs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Quads</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Shoulders</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Triceps</button>
+          </ul>
+        </div>
           <ul class="flex flex-col" id="body-part-list"> 
             <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Abs</button>
             <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Back</button>
@@ -147,7 +178,7 @@
       <div class="grid grid-cols-2 w-2/5" id="exercise-list">
            <!-- exercise list buttons -->
       </div>
-      <div class="card w-96 bg-info shadow-xl w-2/5">
+      <div class="card w-96 bg-info shadow-xl w-2/5 h-3/5">
         <div class="card-body">
           <h2 class="text-center text-2xl font-bold"><span id="exercise-title"></span></h2>
           
