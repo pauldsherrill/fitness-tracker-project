@@ -9,43 +9,56 @@
   <body>
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a class="text-xl text-info">Health and Fitness Tracker</a>
+        <a class="text-2xl text-info">Health and Fitness Tracker</a>
       </div>
       <nav class="flex-none">
-       <ul class="menu menu-horizontal bg-base-200 rounded-box ">
-        <button class="btn text-success"><a href="#nutrition"> Nutrition </a></button>
-        <button class="btn text-success"><a href="#exercise"> Exercise </a></button>
-        <button class="btn text-success"><a href="#tracker"> Tracker </a></button>
-        </ul>
+        <!-- Dropdown Button for Smaller Screens -->
+        <div class="dropdown lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            <!-- Hamburger Menu Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+          </div>
+          <!-- Dropdown Content -->
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 top-0 right-0">
+            <li><a class="btn text-error" href="#nutrition">Nutrition</a></li>
+            <li><a class="btn text-error" href="#exercise">Exercise</a></li>
+            <li><a class="btn text-error" href="#tracker">Tracker</a></li>
+          </ul>
+        </div>
+        <!-- Navbar Links for Larger Screens -->
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a class="btn text-success" href="#nutrition">Nutrition</a></li>
+            <li><a class="btn text-success" href="#exercise">Exercise</a></li>
+            <li><a class="btn text-success" href="#tracker">Tracker</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
-     
     
-  
- <section class="hero min-h-screen bg-base-100">
-  <div class="hero-content" id="status">
+     
+ <section class="hero min-h-screen bg-base-100 ">
+  <div class="hero-content flex-col lg:flex-row" id="status">
    <div class="max-w-md">
-    <h2 class="text-8xl font-bold text-info text-left">Today's Status</h2>
-  </div>
+    <h2 class="text-8xl font-bold text-info text-center">Today's Status</h2>
+   </div>
 
-    <div class="stats stats-vertical lg:stats-horizontal shadow text-primary-content">
-  
+    <div class="stats stats-horizontal shadow text-primary-content">
+   <!--Meal Stat-->
       <div class="stat bg-primary">
         <div class="stat-title text-4xl text-base-content">Meal</div>
         <div class="text-base">Rice</div>
         <div class="text-base">Veggies</div>
         <div class="stat-desc">Total Calories:900</div>
       </div>
-      
+      <!--Workout Stat-->
       <div class="stat bg-accent">
         <div class="stat-title text-4xl text-base-content">Workout</div>
         <div class="text-base">4,200</div>
         <div class="text-base">4,200</div>
         <div class="stat-desc">↗︎ 400 (22%)</div>
       </div>
-      
     </div>
-  
 </section>
 
 <!--Nutrition Section-->
@@ -53,10 +66,10 @@
    <section id="nutrition" class="hero min-h-screen bg-base-200 bg-primary flex flex-col items-center justify-center">
       <h2 class="text-7xl font-bold mt-0 mb-8 text-warning"> Nutrition</h2>
       <!--Table Container-->
-      <div class="card w-100 bg-primary text-primary-content rounded-lg shadow-2xl">
+      <div class="card card-normal bg-primary text-primary-content rounded-lg shadow-2xl">
        <div class="card-body">
         <div class="overflow-x">
-         <table class="table table-lg">
+         <table class="table w-full overflow-x">
           <!-- head -->
           <thead>
             <tr>
@@ -83,7 +96,8 @@
       <button class="btn btn-default mb-4 ml-4">Delete</button>
       <button class="btn btn-secondary mb-4 mr-4">Log Meal</button>
     </div>
-  </div>
+  
+</div>
 </div>
 </div>
 </div>
