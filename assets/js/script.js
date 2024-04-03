@@ -6,8 +6,7 @@ let exerciseListEl = document.getElementById("exercise-list");
 let exerciseTitleEl = document.getElementById("exercise-title");
 let exerciseInstructionsEl = document.getElementById("exercise-instructions");
 const muscleButtons = document.querySelectorAll(".muscle");
-
-let foodNumber = 0;
+const deleteEl = document.getElementById("delete");
 
 function getExercise(bodyPart) {
   fetch(`https://work-out-api1.p.rapidapi.com/search`, {
@@ -80,9 +79,11 @@ function createFoodRow(food) {
   foodListEl.appendChild(tr);
 
   let th = document.createElement("th");
-  th.textContent = foodNumber + 1;
+  let thCheckbox = document.createElement("input");
+  thCheckbox.setAttribute("type", "checkbox");
+  thCheckbox.setAttribute("class", "checkbox");
   tr.appendChild(th);
-  foodNumber++;
+  th.appendChild(thCheckbox);
 
   let td0 = document.createElement("td");
   td0.textContent = food.name;
@@ -175,5 +176,15 @@ muscleButtons.forEach(function (button) {
     getExercise(muscleGroup);
 
     console.log(`button clicked: ${event.target}`);
+  });
+});
+
+deleteEl.addEventListener("click", function () {
+  const checkboxes = document.querySelectorAll(".checkbox");
+
+  checkboxes.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      checkbox.closest("tr").remove();
+    }
   });
 });
