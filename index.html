@@ -50,7 +50,11 @@
     <div class="flex flex-row">
       <div class="text-black mt-2 mr-2" id="meals-container"> 
         <!--Food and calories Summary table--> 
+
       </div>
+      </div>
+      <div class="mt-5 mr-5">Total Calories:
+      <div id="total-calories" >0</div>
       </div>
   </div>
 
@@ -88,7 +92,7 @@
             <tr>
               <th>
                 <label>
-                
+                  <input type="checkbox" class="checkbox" />
                 </label>
               </th>
               <th class="lg:text-3xl md:text-2xl text-base text-base-content">Food</th>
@@ -106,7 +110,7 @@
       </div>
     </div>
     <div class="flex justify-between mt-4">
-      <button class="btn btn-sm lg:btn-md mb-4 ml-4" id="delete">Delete</button>
+      <button class="btn btn-sm lg:btn-md mb-4 ml-4">Delete</button>
       <button id="log-meal" class="btn btn-sm lg:btn-md btn-secondary mb-4 mr-4">Log Meal</button>
     </div>
   </div>
@@ -131,24 +135,59 @@
 </div>
 </section>
 
-<!--Exercise Section-->
-<section id="exercise" class="bg-accent hero min-h-screen flex flex-col items-start">
-  <h2 class="text-6xl font-bold m-5 text-primary">Exercise</h2>
-  <div class="flex flex-col lg:flex-row w-full mt-10 items-center lg:justify-around ">
-    <div tabindex="0" class="rounded-lg shadow-2xl collapse collapse-open w-4/5 md:w-3/5 lg:w-1/5"> 
-      <div class="font-bold text-2xl text-center m-3">
-        Choose Muscle Group
+    <!--Exercise Section-->
+    <section id="exercise" class="bg-accent hero min-h-screen flex flex-col items-start">
+      <h2 class="text-6xl font-bold m-10 text-primary">Exercise</h2>
+      <div class="flex flex-row w-full mt-10 justify-around">
+        <div tabindex="0" class="rounded-lg shadow-2xl collapse collapse-open w-1/5"> 
+          <div class="font-bold text-2xl text-center m-3">
+            Choose Muscle Group
+          </div>
+          <!-- Dropdown Button for Smaller Screens -->
+        <div class="dropdown lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            <!-- Hamburger Menu Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />Choose Muscle Group</svg>
+          </div>
+          <!-- Dropdown Content -->
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 top-0 right-0">
+            <button class="btn btn-accent text-base-content text-2xl m-2">Abs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Back</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Biceps</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Chest</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Legs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Quads</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Shoulders</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2">Triceps</button>
+          </ul>
+        </div>
+          <ul class="flex flex-col" id="body-part-list"> 
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Abs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Back</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Biceps</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Chest</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Legs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Quads</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Shoulders</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Triceps</button>
+          </ul>
+        </div>
+      <div class="grid grid-cols-2 w-2/5" id="exercise-list">
+           <!-- exercise list buttons -->
       </div>
-      <ul class="flex flex-col" id="body-part-list"> 
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Abs</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Back</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Biceps</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Chest</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Legs</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Quads</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Shoulders</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Triceps</button>
-      </ul>
+      <div class="card w-96 bg-info shadow-xl w-2/5 h-3/5">
+        <div class="card-body">
+          <h2 class="text-center text-2xl font-bold"><span id="exercise-title"></span></h2>
+          
+          <label>Instructions:</label>
+          <ol id="exercise-instructions" style="list-style: auto;">
+              <!-- instructions li elements -->
+          </ol>
+          <label>Notes:</label>
+          <textarea placeholder="Add workout notes here" class="h-52 bg-info border-solid border-white rounded"></textarea>
+          <button id="log-exercise" class="btn btn-primary text-base-content text-2xl">Log Exercise</button>
+        </div>
+      </div>
     </div>
   <div class="grid grid-cols-2 mt-10 mb-10 w-4/5 md:w-3/5 lg:w-2/5 lg:h-3/5 lg:text-2xl" id="exercise-list">
        <!-- exercise list buttons -->
@@ -156,7 +195,6 @@
   <div class="card bg-info shadow-xl mb-10 w-4/5 md:w-3/5 lg:w-1/5 h-3/5">
     <div class="card-body">
       <h2 class="text-center text-2xl font-bold"><span id="exercise-title"></span></h2>
-      
       <label>Instructions:</label>
       <ul id="exercise-instructions">
           <!-- instructions li elements -->
