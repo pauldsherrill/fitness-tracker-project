@@ -36,60 +36,59 @@
         </div>
       </nav>
     </div>
-     
-    <section class="hero min-h-screen bg-base-100">
-      <div class="hero-content" id="status">
-       <div class="max-w-md">
-        <h2 class="text-8xl font-bold text-info text-left">Today's Status</h2>
-      </div>
-    
-        <div class="stats stats-vertical lg:stats-horizontal shadow">
-      
-          <div class="stat bg-primary">
-            <div class="stat-title text-4xl text-base-content font-bold">Meals</div>
-            <div class="flex flex-row">
-              <div class="text-black mt-5 mr-2">Food Placeholder</div>
-              <div class="stat-desc mt-6">40cal</div>
-            </div>
-            <div class="flex flex-row">
-              <div class="text-black mt-5 mr-2">Food Placeholder</div>
-              <div class="stat-desc mt-6">40cal</div>
-            </div>
-            <div class="flex flex-row">
-              <div class="mt-5 mr-5">Total Calories:</div>
-              <div class="mt-5">80</div>
-            </div>
-          </div>
-          
-          <div class="stat bg-accent rounded-r-2xl">
-            <div class="stat-title text-4xl text-base-content font-bold">Exercises</div>
-            <div>
-              <div class="text-black mt-5">Exercise Placeholder</div>
-              <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
-            </div>
-            <div>
-              <div class="text-black mt-5">Exercise Placeholder</div>
-              <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
-            </div>
-            <div>
-              <div class="text-black mt-5">Exercise Placeholder</div>
-              <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
-            </div>
-          </div>
-          
-        </div>
-      
-    </section>
+
+ <section class="hero min-h-screen bg-base-100">
+  <div class="hero-content flex-col lg:flex-row" id="status">
+   <div class="max-w-md">
+    <h2 class="font-bold text-info text-center text-6xl lg:text-8xl">Today's Status</h2>
+   </div>
+
+    <div class="stats stats-horizontal shadow text-primary-content">
+   <!--Meal Stat-->
+   <div class="stat bg-primary">
+    <div class="stat-title text-4xl text-base-content font-bold">Meals</div>
+    <div class="flex flex-row">
+      <div class="text-black mt-5 mr-2">Food Placeholder</div>
+      <div class="stat-desc mt-6">40cal</div>
+    </div>
+    <div class="flex flex-row">
+      <div class="text-black mt-5 mr-2">Food Placeholder</div>
+      <div class="stat-desc mt-6">40cal</div>
+    </div>
+    <div class="flex flex-row">
+      <div class="mt-5 mr-5">Total Calories:</div>
+      <div class="mt-5">80</div>
+    </div>
+  </div>
+  
+  <div class="stat bg-accent rounded-r-2xl">
+    <div class="stat-title text-4xl text-base-content font-bold">Exercises</div>
+    <div>
+      <div class="text-black mt-5">Exercise Placeholder</div>
+      <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+    </div>
+    <div>
+      <div class="text-black mt-5">Exercise Placeholder</div>
+      <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+    </div>
+    <div>
+      <div class="text-black mt-5">Exercise Placeholder</div>
+      <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+    </div>
+  </div>
+</div>
+</section>
+
 
 <!--Nutrition Section-->
   <main> 
    <section id="nutrition" class="hero min-h-screen bg-base-200 bg-primary flex flex-col items-center justify-center">
-      <h2 class="text-7xl font-bold mt-0 mb-8 text-warning"> Nutrition</h2>
+    <h2 class="text-7xl font-bold mt-0 mb-8 text-warning"> Nutrition</h2>
       <!--Table Container-->
-      <div class="card w-100 bg-primary text-primary-content rounded-lg shadow-2xl">
+      <div class="card card-normal bg-primary text-primary-content rounded-lg shadow-2xl">
        <div class="card-body">
-        <div class="overflow-x">
-         <table class="table table-lg">
+        <div class="overflow-x-auto">
+         <table class="table table-auto table-fixed">
           <!-- head -->
           <thead>
             <tr>
@@ -98,11 +97,11 @@
                   <input type="checkbox" class="checkbox" />
                 </label>
               </th>
-              <th class="text-2xl text-base-content">Food</th>
-              <th class="text-2xl text-base-content">Calories</th>
-              <th class="text-2xl text-base-content">Carbs</th>
-              <th class="text-2xl text-base-content">Fats</th>
-              <th class="text-2xl text-base-content">Protein</th>
+              <th class="lg:text-3xl md:text-2xl text-base text-base-content">Food</th>
+              <th class="lg:text-3xl md:text-2xl text-base text-base-content">Calories</th>
+              <th class="lg:text-3xl md:text-2xl text-base text-base-content">Carbs</th>
+              <th class="lg:text-3xl md:text-2xl text-base text-base-content">Fats</th>
+              <th class="lg:text-3xl md:text-2xl text-base text-base-content">Protein</th>
             </tr>
           </thead>
           <tbody class="text-neutral-content" id="display-food">
@@ -113,15 +112,15 @@
       </div>
     </div>
     <div class="flex justify-between mt-4">
-      <button class="btn btn-default mb-4 ml-4">Delete</button>
-      <button id="log-meal" class="btn btn-secondary mb-4 mr-4">Log Meal</button>
+      <button class="btn btn-sm lg:btn-md mb-4 ml-4">Delete</button>
+      <button id="log-meal" class="btn btn-sm lg:btn-md btn-secondary mb-4 mr-4">Log Meal</button>
     </div>
   </div>
 </div>
 </div>
 </div>
 <div class="mb-8"></div>
-      <button class="btn btn-accent is-focused self-center" onclick="my_modal_2.showModal()">Add Food to Analyze</button>
+      <button class="btn btn-sm lg:btn-md btn-accent is-focused self-center" onclick="my_modal_2.showModal()">Add Food to Analyze</button>
       <dialog id="my_modal_2" class="modal">
       <div class="modal-box">
         <form method="dialog" id="food-input">
