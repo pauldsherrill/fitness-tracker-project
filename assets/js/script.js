@@ -9,9 +9,8 @@ const muscleButtons = document.querySelectorAll(".muscle");
 const deleteEl = document.getElementById("delete");
 
 function getExercise(bodyPart) {
-  fetch(`https://work-out-api1.p.rapidapi.com/search`, {
+  fetch(`https://work-out-api1.p.rapidapi.com/search?Muscles=${bodyPart}`, {
     method: "GET",
-    params: { Muscles: `${bodyPart}` },
     headers: {
       "X-RapidAPI-Key": "17ae5600c9msha4401cdad279f53p1ef66ejsnce440ee66ab6",
       "X-RapidAPI-Host": "work-out-api1.p.rapidapi.com",
@@ -172,6 +171,8 @@ getFoodEl.addEventListener("submit", function () {
 muscleButtons.forEach(function (button) {
   button.addEventListener("click", function (event) {
     const muscleGroup = event.target.textContent;
+
+    console.log(muscleGroup);
 
     getExercise(muscleGroup);
 
