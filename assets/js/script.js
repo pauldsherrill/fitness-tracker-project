@@ -28,24 +28,6 @@ function getExercise(bodyPart) {
     });
 }
 
-// function listBodyParts() {
-//   fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPartList`, {
-//     method: "GET",
-//     headers: {
-//       "X-RapidAPI-Key": "8f9fccef91msh7afbf4517485a88p1ef2d0jsn27c16dc7f653",
-//       "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-//     },
-//   })
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-
-//       renderBodyPartList(data);
-//     });
-// }
-
 function getNutrition(food) {
   let enteredFood = food;
   fetch(
@@ -82,6 +64,9 @@ function getNutrition(food) {
         carbs: `${data.totalNutrients.CHOCDF.quantity.toFixed(1)} ${
           data.totalNutrients.CHOCDF.unit
         }`,
+        protein: `${data.totalNutrients.PROCNT.quantity.toFixed(1)} ${
+          data.totalNutrients.PROCNT.unit
+        }`,
       };
 
       console.log(food);
@@ -114,6 +99,10 @@ function createFoodRow(food) {
   let td2 = document.createElement("td");
   td2.textContent = food.fat;
   tr.appendChild(td2);
+
+  let td3 = document.createElement("td");
+  td3.textContent = food.protein;
+  tr.appendChild(td3);
 }
 
 function renderBodyPartList(data) {
@@ -170,8 +159,6 @@ function renderInstructions(exercise) {
 
   exerciseInstructionsEl.appendChild(li);
 }
-
-// listBodyParts();
 
 getFoodEl.addEventListener("submit", function () {
   //   event.preventDefault();
