@@ -76,9 +76,9 @@
       <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
     </div>
   </div>
-  
 </div>
 </section>
+
 
 <!--Nutrition Section-->
   <main> 
@@ -115,8 +115,7 @@
       <button class="btn btn-sm lg:btn-md mb-4 ml-4">Delete</button>
       <button id="log-meal" class="btn btn-sm lg:btn-md btn-secondary mb-4 mr-4">Log Meal</button>
     </div>
-  
-</div>
+  </div>
 </div>
 </div>
 </div>
@@ -146,7 +145,14 @@
           <div class="font-bold text-2xl text-center m-3">
             Choose Muscle Group
           </div>
-          <ul class="flex flex-col" id="body-part-list"> 
+          <!-- Dropdown Button for Smaller Screens -->
+        <div class="dropdown lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            <!-- Hamburger Menu Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />Choose Muscle Group</svg>
+          </div>
+          <!-- Dropdown Content -->
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 top-0 right-0">
             <button class="btn btn-accent text-base-content text-2xl m-2">Abs</button>
             <button class="btn btn-accent text-base-content text-2xl m-2">Back</button>
             <button class="btn btn-accent text-base-content text-2xl m-2">Biceps</button>
@@ -157,10 +163,21 @@
             <button class="btn btn-accent text-base-content text-2xl m-2">Triceps</button>
           </ul>
         </div>
+          <ul class="flex flex-col" id="body-part-list"> 
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Abs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Back</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Biceps</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Chest</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Legs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Quads</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Shoulders</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Triceps</button>
+          </ul>
+        </div>
       <div class="grid grid-cols-2 w-2/5" id="exercise-list">
            <!-- exercise list buttons -->
       </div>
-      <div class="card w-96 bg-info shadow-xl w-2/5">
+      <div class="card w-96 bg-info shadow-xl w-2/5 h-3/5">
         <div class="card-body">
           <h2 class="text-center text-2xl font-bold"><span id="exercise-title"></span></h2>
           
