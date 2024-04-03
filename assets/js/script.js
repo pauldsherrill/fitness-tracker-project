@@ -5,20 +5,19 @@ let bodyPartEl = document.getElementById("body-part-list");
 let exerciseListEl = document.getElementById("exercise-list");
 let exerciseTitleEl = document.getElementById("exercise-title");
 let exerciseInstructionsEl = document.getElementById("exercise-instructions");
+const muscleButtons = document.querySelectorAll(".muscle");
 
 let foodNumber = 0;
 
 function getExercise(bodyPart) {
-  fetch(
-    `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}?limit=10`,
-    {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "8f9fccef91msh7afbf4517485a88p1ef2d0jsn27c16dc7f653",
-        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-      },
-    }
-  )
+  fetch(`https://work-out-api1.p.rapidapi.com/search`, {
+    method: "GET",
+    params: { Muscles: `${bodyPart}` },
+    headers: {
+      "X-RapidAPI-Key": "17ae5600c9msha4401cdad279f53p1ef66ejsnce440ee66ab6",
+      "X-RapidAPI-Host": "work-out-api1.p.rapidapi.com",
+    },
+  })
     .then(function (response) {
       return response.json();
     })
@@ -29,23 +28,23 @@ function getExercise(bodyPart) {
     });
 }
 
-function listBodyParts() {
-  fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPartList`, {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "8f9fccef91msh7afbf4517485a88p1ef2d0jsn27c16dc7f653",
-      "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-    },
-  })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
+// function listBodyParts() {
+//   fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPartList`, {
+//     method: "GET",
+//     headers: {
+//       "X-RapidAPI-Key": "8f9fccef91msh7afbf4517485a88p1ef2d0jsn27c16dc7f653",
+//       "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+//     },
+//   })
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
 
-      renderBodyPartList(data);
-    });
-}
+//       renderBodyPartList(data);
+//     });
+// }
 
 function getNutrition(food) {
   let enteredFood = food;
@@ -139,7 +138,7 @@ function renderBodyPartList(data) {
 function populateExercises(data) {
   exerciseListEl.innerHTML = "";
 
-  for (i = 0; i < data.length; i++) {
+  for (i = 0; i < 10; i++) {
     let exercise = data[i];
 
     let button = document.createElement("button");
@@ -148,7 +147,7 @@ function populateExercises(data) {
       "btn btn-primary text-base-content text-base m-2 btn-lg"
     );
     button.textContent =
-      exercise.name.charAt(0).toUpperCase() + exercise.name.slice(1);
+      exercise.WorkOut.charAt(0).toUpperCase() + exercise.WorkOut.slice(1);
     button.addEventListener("click", function () {
       renderInstructions(exercise);
     });
@@ -160,18 +159,16 @@ function renderInstructions(exercise) {
   exerciseTitleEl.innerHTML = "";
   exerciseInstructionsEl.innerHTML = "";
 
-  let instruct = exercise.instructions;
+  let instruct = exercise.Explaination;
   console.log(instruct);
 
   exerciseTitleEl.textContent =
-    exercise.name.charAt(0).toUpperCase() + exercise.name.slice(1);
+    exercise.WorkOut.charAt(0).toUpperCase() + exercise.WorkOut.slice(1);
 
-  for (i = 0; i < instruct.length; i++) {
-    let li = document.createElement("li");
-    li.textContent = instruct[i];
+  let li = document.createElement("li");
+  li.textContent = instruct;
 
-    exerciseInstructionsEl.appendChild(li);
-  }
+  exerciseInstructionsEl.appendChild(li);
 }
 
 // listBodyParts();
@@ -184,4 +181,12 @@ getFoodEl.addEventListener("submit", function () {
   getNutrition(food);
 });
 
+muscleButtons.forEach(function (button) {
+  button.addEventListener("click", function (event) {
+    const muscleGroup = event.target.textContent;
 
+    getExercise(muscleGroup);
+
+    console.log(`button clicked: ${event.target}`);
+  });
+});

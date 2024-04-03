@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const mealInput = document.querySelector("#meal");
 const exerciseInput = document.querySelector("#exercise");
 
@@ -34,7 +33,6 @@ AddExerciseButton.addEventListener("click", function (event) {
 
     renderLastRegistered();
   }
-=======
 
 
 const logMealButton = document.getElementById("log-meal");
@@ -59,5 +57,4 @@ logMealButton.addEventListener("click", function () {
 
   alert("Meals logged correctly");
 
->>>>>>> 15dc3440b357b562cdd1d02b48b33b18f3bdcde7
 });
