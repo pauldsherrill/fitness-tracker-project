@@ -134,7 +134,7 @@ function populateExercises(data) {
     let button = document.createElement("button");
     button.setAttribute(
       "class",
-      "btn btn-primary text-base-content text-base m-2 btn-lg"
+      "btn btn-primary text-base-content text-base m-5 text-xs"
     );
     button.textContent =
       exercise.WorkOut.charAt(0).toUpperCase() + exercise.WorkOut.slice(1);
