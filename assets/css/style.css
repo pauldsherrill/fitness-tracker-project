@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+=======
+#hoverImageContainer {
+  position: absolute;
+  display: none;
+}
+
+#hoverImage {
+  width: 100px;
+  height: auto;
+}
+
+>>>>>>> f61ee203016487ad138c22e8fbe664515f82198d
