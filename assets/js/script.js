@@ -124,11 +124,31 @@ function renderBodyPartList(data) {
   }
 }
 
+function populateExercisesDefault(data) {
+  exerciseListEl.innerHTML = "";
+  console.log(data);
+    let exercise = data[i];
+
+    let button = document.createElement("button");
+    button.setAttribute(
+      "class",
+      "btn btn-primary text-base-content text-base m-5 text-xs"
+    );
+    button.textContent =
+      exercise.WorkOut.charAt(0).toUpperCase() + exercise.WorkOut.slice(1);
+    button.addEventListener("click", function () {
+      renderInstructions(exercise);
+    });
+    exerciseListEl.appendChild(button);
+  }
+
+
 function populateExercises(data) {
   exerciseListEl.innerHTML = "";
 
   for (i = 0; i < 10; i++) {
     let exercise = data[i];
+    console.log(exercise.WorkOut);
 
     let button = document.createElement("button");
     button.setAttribute(
@@ -189,3 +209,4 @@ deleteEl.addEventListener("click", function () {
     }
   });
 });
+
