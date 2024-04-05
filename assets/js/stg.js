@@ -1,14 +1,14 @@
 const logMealButton = document.getElementById("log-meal");
 const logExerciseButton = document.getElementById("log-exercise");
 
-
 logMealButton.addEventListener("click", function () {
 
-    const rows = document.querySelectorAll("#display-food tr");
+    const rows = document.querySelectorAll("#display-food tr"); // Get data from the table shown in nutrition
     const meals = [];
 
-    let totalCalories = 0;
+    let totalCalories = 0; // Sum total calories of meals
 
+    // For each row in the table, create a meal with its properties
     rows.forEach(row => {
         const meal = {
             food: row.cells[1].textContent,
@@ -18,15 +18,17 @@ logMealButton.addEventListener("click", function () {
             protein: parseInt(row.cells[5].textContent)
         };
 
-        meals.push(meal);
-        totalCalories += meal.calories;
+        meals.push(meal); // add each meal data into meals array
+        totalCalories += meal.calories; // Sum calories of each meal
     });
 
+    // Save meals array in local storage
     localStorage.setItem('meals', JSON.stringify(meals));
 
+    // Update of meals container in Today's status
     const mealsContainer = document.getElementById("meals-container"); //Update section
-    mealsContainer.innerHTML = ""; 
 
+    // Show meals logged in Local Stg by iterating
     meals.forEach(meal => {
         const foodItem = document.createElement("div");
         foodItem.classList.add("flex", "flex-row");
@@ -37,6 +39,7 @@ logMealButton.addEventListener("click", function () {
         mealsContainer.appendChild(foodItem);
     });
 
+    // Update total calories in Today's Status section
     const totalCaloriesElement = document.getElementById("total-calories"); //Update calories in Summary
     totalCaloriesElement.textContent = totalCalories;
 
@@ -55,6 +58,7 @@ logExerciseButton.addEventListener("click", function() {
   console.log(title);
   console.log(note);
 
+  // If local stg has data, bring it
   let exerciseData = JSON.parse(localStorage.getItem("exercise")) || [];
 
   const exerciseObject = {
@@ -64,11 +68,13 @@ logExerciseButton.addEventListener("click", function() {
 
   exerciseData.push(exerciseObject);
 
+  // Save new exercise logged in local storage
   localStorage.setItem("exercise", JSON.stringify(exerciseData));
 
+  // Update exercise container
   const exerciseContainer = document.getElementById("exercise-container");
-  exerciseContainer.innerHTML = ""; 
 
+  // Show logged exercises by iterate
   exerciseData.forEach(exerciseObject => {
     const exerciseItem = document.createElement("div");
     exerciseItem.classList.add("flex", "flex-row");
@@ -83,12 +89,14 @@ logExerciseButton.addEventListener("click", function() {
 
 });
 
+  // Keep data after refresh information
 window.addEventListener('load', function() {
 
   const savedMeals = JSON.parse(localStorage.getItem('meals')) || [];
   const mealsContainer = document.getElementById('meals-container');
   let totalCalories = 0;
 
+  // Show meals information that is saved in local stg
   savedMeals.forEach(meal => {
       const foodItem = document.createElement('div');
       foodItem.classList.add('flex', 'flex-row');
@@ -100,12 +108,15 @@ window.addEventListener('load', function() {
       totalCalories += meal.calories;
   });
 
+  // Update calories in Today's Status Section
   const totalCaloriesElement = document.getElementById('total-calories');
   totalCaloriesElement.textContent = totalCalories;
 
+  // If there is data, bring exercise information 
   const savedExercises = JSON.parse(localStorage.getItem('exercise')) || [];
   const exerciseContainer = document.getElementById('exercise-container');
 
+  // Show logged exercise from local storage *title and note*
   savedExercises.forEach(exerciseObject => {
       const exerciseItem = document.createElement('div');
       exerciseItem.classList.add('flex', 'flex-row');
