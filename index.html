@@ -7,10 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="./assets/css/style.css">
   </head>
+
   <body>
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a class="text-2xl text-info md:ml-5">Health and Fitness Tracker</a>
+        <a class="text-2xl text-info md:ml-5"> Gains - Health and Fitness Tracker</a>
       </div>
       <nav class="flex-none">
         <!-- Dropdown Button for Smaller Screens -->
@@ -36,7 +37,7 @@
         </div>
       </nav>
     </div>
-
+<!--Today's Status Container-->
  <section class="hero min-h-screen bg-base-100">
   <div class="hero-content flex-col lg:flex-row" id="status">
    <div class="max-w-md">
@@ -60,10 +61,8 @@
   <!--Exercise Stat-->
   <div class="stat bg-accent rounded-r-2xl">
     <div class="stat-title text-4xl text-base-content font-bold">Exercises</div>
-
     <div class="text-black mt-2 mr-2" id="exercise-container"> 
-      <!--Exercise and summary table--> 
-
+      <!--Exercise and summary table-->
     </div>
   </div>
 </div>
@@ -96,7 +95,6 @@
           </thead>
           <tbody class="text-neutral-content" id="display-food">
             <!-- row 1 -->
-            
           </tbody>
         </table>
       </div>
@@ -109,6 +107,7 @@
 </div>
 </div>
 </div>
+<!--Analyze Food Modal-->
 <div class="mb-8"></div>
       <button class="btn btn-sm lg:btn-md btn-accent is-focused self-center" onclick="my_modal_2.showModal()">Add Food to Analyze</button>
       <dialog id="my_modal_2" class="modal">
@@ -177,6 +176,7 @@
       </div>
     </section>
 
+<!--Weekly Progress Tracker-->
     <!--Incoming Updates Section Here-->
     <section id="tracker" class="bg-info hero min-h-screen">
       <div id="tracker">
@@ -184,11 +184,13 @@
         <div class="ml-10 mr-10"> <img src="./tracker.png" alt="An image of a weekly tracker" style="width: 1200px; height: 600px;"/></div>
       </div>
     </section>
-  </main>
+    </main>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/stg.js"></script>
   </body>
+  
   <footer class="footer footer-center p-4 bg-info text-base-300">
     <aside>
       <p> Copyright © 2024 - <strong>Gains</strong> by The Quad </p>
