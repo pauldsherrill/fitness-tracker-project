@@ -82,3 +82,5 @@ logExerciseButton.addEventListener("click", function() {
   alert("Exercise logged correctly");
 
 });
+
+
