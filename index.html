@@ -52,22 +52,18 @@
         <!--Food and calories Summary table--> 
       </div>
       </div>
+      <div class="mt-5 mr-5"><strong>Total Calories:</strong>
+      <div id="total-calories"> 0 </div>
+      </div>
   </div>
 
-  
+  <!--Exercise Stat-->
   <div class="stat bg-accent rounded-r-2xl">
     <div class="stat-title text-4xl text-base-content font-bold">Exercises</div>
-    <div>
-      <div class="text-black mt-5">Exercise Placeholder</div>
-      <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
-    </div>
-    <div>
-      <div class="text-black mt-5">Exercise Placeholder</div>
-      <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
-    </div>
-    <div>
-      <div class="text-black mt-5">Exercise Placeholder</div>
-      <div class="text-base text-sm">Here is where my notes for this exercise would be logged. I would include things like number of reps, number of sets, how much weight, how much rest, etc.</div>
+
+    <div class="text-black mt-2 mr-2" id="exercise-container"> 
+      <!--Exercise and summary table--> 
+
     </div>
   </div>
 </div>
@@ -172,7 +168,7 @@
           <!-- instructions li elements -->
       </ul>
       <label>Notes:</label>
-      <textarea placeholder="Add workout notes here" class="h-52 bg-info border-solid border-white rounded"></textarea>
+      <textarea id="exercise-note" placeholder="Add workout notes here" class="h-52 bg-info border-solid border-white rounded"></textarea>
       <button id="log-exercise" class="btn btn-primary text-base-content text-2xl">Log Exercise</button>
     </div>
   </div>
