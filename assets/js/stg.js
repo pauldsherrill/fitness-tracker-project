@@ -27,6 +27,7 @@ logMealButton.addEventListener("click", function () {
 
     // Update of meals container in Today's status
     const mealsContainer = document.getElementById("meals-container"); //Update section
+    mealsContainer.innerHTML = "";
 
     // Show meals logged in Local Stg by iterating
     meals.forEach(meal => {
@@ -73,6 +74,7 @@ logExerciseButton.addEventListener("click", function() {
 
   // Update exercise container
   const exerciseContainer = document.getElementById("exercise-container");
+  exerciseContainer.innerHTML = "";
 
   // Show logged exercises by iterate
   exerciseData.forEach(exerciseObject => {
