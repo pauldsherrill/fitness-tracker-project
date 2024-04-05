@@ -25,7 +25,7 @@ logMealButton.addEventListener("click", function () {
     localStorage.setItem('meals', JSON.stringify(meals));
 
     const mealsContainer = document.getElementById("meals-container"); //Update section
-    // mealsContainer.innerHTML = ""; 
+    mealsContainer.innerHTML = ""; 
 
     meals.forEach(meal => {
         const foodItem = document.createElement("div");
@@ -83,4 +83,36 @@ logExerciseButton.addEventListener("click", function() {
 
 });
 
+window.addEventListener('load', function() {
 
+  const savedMeals = JSON.parse(localStorage.getItem('meals')) || [];
+  const mealsContainer = document.getElementById('meals-container');
+  let totalCalories = 0;
+
+  savedMeals.forEach(meal => {
+      const foodItem = document.createElement('div');
+      foodItem.classList.add('flex', 'flex-row');
+      foodItem.innerHTML = `
+          <div class="text-black mt-5 mr-2">${meal.food}</div>
+          <div class="stat-desc mt-6">${meal.calories}cal</div>
+      `;
+      mealsContainer.appendChild(foodItem);
+      totalCalories += meal.calories;
+  });
+
+  const totalCaloriesElement = document.getElementById('total-calories');
+  totalCaloriesElement.textContent = totalCalories;
+
+  const savedExercises = JSON.parse(localStorage.getItem('exercise')) || [];
+  const exerciseContainer = document.getElementById('exercise-container');
+
+  savedExercises.forEach(exerciseObject => {
+      const exerciseItem = document.createElement('div');
+      exerciseItem.classList.add('flex', 'flex-row');
+      exerciseItem.innerHTML = `
+          <div class="text-black mt-5 mr-2"><strong>${exerciseObject.exerciseTitle}</strong></div>
+          <div class="stat-desc mt-6 text-black">${exerciseObject.exerciseNote}</div>
+      `;
+      exerciseContainer.appendChild(exerciseItem);
+  });
+});
