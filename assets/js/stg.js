@@ -4,7 +4,7 @@ const logExerciseButton = document.getElementById("log-exercise");
 logMealButton.addEventListener("click", function () {
 
     const rows = document.querySelectorAll("#display-food tr"); // Get data from the table shown in nutrition
-    const meals = [];
+    const meals = JSON.parse(localStorage.getItem('meals')) || [];
 
     let totalCalories = 0; // Sum total calories of meals
 
@@ -24,6 +24,9 @@ logMealButton.addEventListener("click", function () {
 
     // Save meals array in local storage
     localStorage.setItem('meals', JSON.stringify(meals));
+
+    // Clear content in table
+    document.getElementById("display-food").innerHTML = "";
 
     // Update of meals container in Today's status
     const mealsContainer = document.getElementById("meals-container"); //Update section
