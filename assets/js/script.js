@@ -8,6 +8,7 @@ let exerciseInstructionsEl = document.getElementById("exercise-instructions");
 const muscleButtons = document.querySelectorAll(".muscle");
 const deleteEl = document.getElementById("delete");
 
+// Fetch request to pull data by chosen muscle group
 function getExercise(bodyPart) {
   fetch(`https://work-out-api1.p.rapidapi.com/search?Muscles=${bodyPart}`, {
     method: "GET",
@@ -26,6 +27,7 @@ function getExercise(bodyPart) {
     });
 }
 
+// Fetch request to pull data on typed-in food and amount
 function getNutrition(food) {
   let enteredFood = food;
   fetch(
@@ -40,6 +42,7 @@ function getNutrition(food) {
     .then(function (data) {
       console.log(data);
 
+      // Log data for debugging
       console.log(`Food: ${enteredFood}`);
       console.log(`Calories: ${data.calories}`);
       console.log(
@@ -53,6 +56,7 @@ function getNutrition(food) {
         }`
       );
 
+      // Create object to store nutrition data
       let food = {
         name: enteredFood, // previously data.ingredients[0].text
         calories: data.calories,
@@ -67,12 +71,14 @@ function getNutrition(food) {
         }`,
       };
 
+      // Log food object for debugging
       console.log(food);
 
       createFoodRow(food);
     });
 }
 
+// Create a row using nutrition data from food object
 function createFoodRow(food) {
   let tr = document.createElement("tr");
   foodListEl.appendChild(tr);
@@ -105,44 +111,7 @@ function createFoodRow(food) {
   tr.appendChild(td3);
 }
 
-function renderBodyPartList(data) {
-  for (i = 0; i < 10; i++) {
-    let bodyPart = data[i];
-
-    let button = document.createElement("button");
-    button.setAttribute(
-      "class",
-      "btn btn-accent text-base-content text-2xl m-2"
-    );
-    button.textContent = data[i].charAt(0).toUpperCase() + data[i].slice(1);
-
-    button.addEventListener("click", function () {
-      getExercise(bodyPart);
-    });
-
-    bodyPartEl.appendChild(button);
-  }
-}
-
-function populateExercisesDefault(data) {
-  exerciseListEl.innerHTML = "";
-  console.log(data);
-    let exercise = data[i];
-
-    let button = document.createElement("button");
-    button.setAttribute(
-      "class",
-      "btn btn-primary text-base-content text-base m-5 text-xs"
-    );
-    button.textContent =
-      exercise.WorkOut.charAt(0).toUpperCase() + exercise.WorkOut.slice(1);
-    button.addEventListener("click", function () {
-      renderInstructions(exercise);
-    });
-    exerciseListEl.appendChild(button);
-  }
-
-
+// Create 10 buttons to list workouts based on chosen muscle group
 function populateExercises(data) {
   exerciseListEl.innerHTML = "";
 
@@ -164,6 +133,7 @@ function populateExercises(data) {
   }
 }
 
+// Render the chosen exercise's name and instructions onto the page
 function renderInstructions(exercise) {
   exerciseTitleEl.innerHTML = "";
   exerciseInstructionsEl.innerHTML = "";
@@ -180,6 +150,7 @@ function renderInstructions(exercise) {
   exerciseInstructionsEl.appendChild(li);
 }
 
+// Button to fetch nutrition info of typed-in food
 getFoodEl.addEventListener("submit", function () {
   //   event.preventDefault();
 
@@ -188,6 +159,7 @@ getFoodEl.addEventListener("submit", function () {
   getNutrition(food);
 });
 
+// Button to fetch data for chosen muscle group
 muscleButtons.forEach(function (button) {
   button.addEventListener("click", function (event) {
     const muscleGroup = event.target.textContent;
@@ -200,6 +172,7 @@ muscleButtons.forEach(function (button) {
   });
 });
 
+// Delete button for checked items
 deleteEl.addEventListener("click", function () {
   const checkboxes = document.querySelectorAll(".checkbox");
 
@@ -209,4 +182,3 @@ deleteEl.addEventListener("click", function () {
     }
   });
 });
-
