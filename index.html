@@ -127,62 +127,64 @@
 </div>
 </section>
 
-<!--Exercise Section-->
-<section id="exercise" class="bg-accent hero min-h-screen flex flex-col items-start">
-  <h2 class="text-6xl font-bold m-5 text-primary">Exercise</h2>
-  <div class="flex flex-col lg:flex-row w-full mt-10 items-center lg:justify-around ">
-    <div tabindex="0" class="rounded-lg shadow-2xl collapse collapse-open w-4/5 md:w-3/5 lg:w-1/5"> 
-      <div class="font-bold text-2xl text-center m-3">
-        Choose Muscle Group
+    <!--Exercise Section-->
+    <section id="exercise" class="bg-accent hero min-h-screen flex flex-col items-start">
+      <h2 class="text-6xl font-bold m-5 text-primary">Exercise</h2>
+      <div class="flex flex-col lg:flex-row w-full mt-10 items-center lg:justify-around ">
+        <div tabindex="0" class="rounded-lg shadow-2xl collapse collapse-open w-4/5 md:w-3/5 lg:w-1/5">
+          <div class="font-bold text-2xl text-center m-3">
+            Choose Muscle Group
+          </div>
+          <!--Lists muscle groups to choose from-->
+          <ul class="flex flex-col" id="body-part-list"> 
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Abs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Back</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Biceps</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Chest</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Legs</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Quads</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Shoulders</button>
+            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Triceps</button>
+          </ul>
+        </div>
+      <div class="grid grid-cols-2 mt-10 mb-10 w-4/5 md:w-3/5 lg:w-2/5 lg:h-3/5 lg:text-2xl" id="exercise-list">
+        <!--Placeholder buttons to avoid empty space on screen, will be replaced by exercise options on click-->
+        <button class="btn btn-primary text-base-content text-base m-5 text-xs">Select</button>
+        <button class="btn btn-primary text-base-content text-base m-5 text-xs">a</button>
+        <button class="btn btn-primary text-base-content text-base m-5 text-xs">muscle</button>
+        <button class="btn btn-primary text-base-content text-base m-5 text-xs">group</button>
+        <button class="btn btn-primary text-base-content text-base m-5 text-xs">to</button>
+        <button class="btn btn-primary text-base-content text-base m-5 text-xs">see</button>
+        <button class="btn btn-primary text-base-content text-base m-5 text-xs">exercises</button>
+        <button class="btn btn-primary text-base-content text-base m-5 text-xs">for</button>
+        <button class="btn btn-primary text-base-content text-base m-5 text-xs">that</button>
+        <button class="btn btn-primary text-base-content text-base m-5 text-xs">muscle</button>
       </div>
-      <ul class="flex flex-col" id="body-part-list"> 
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Abs</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Back</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Biceps</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Chest</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Legs</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Quads</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Shoulders</button>
-        <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Triceps</button>
-      </ul>
-    </div>
-  <div class="grid grid-cols-2 mt-10 mb-10 w-4/5 md:w-3/5 lg:w-2/5 lg:h-3/5 lg:text-2xl" id="exercise-list">
-    <button class="btn btn-primary text-base-content text-base m-5 text-xs">Select</button>
-    <button class="btn btn-primary text-base-content text-base m-5 text-xs">a</button>
-    <button class="btn btn-primary text-base-content text-base m-5 text-xs">muscle</button>
-    <button class="btn btn-primary text-base-content text-base m-5 text-xs">group</button>
-    <button class="btn btn-primary text-base-content text-base m-5 text-xs">to</button>
-    <button class="btn btn-primary text-base-content text-base m-5 text-xs">see</button>
-    <button class="btn btn-primary text-base-content text-base m-5 text-xs">exercises</button>
-    <button class="btn btn-primary text-base-content text-base m-5 text-xs">for</button>
-    <button class="btn btn-primary text-base-content text-base m-5 text-xs">that</button>
-    <button class="btn btn-primary text-base-content text-base m-5 text-xs">muscle</button>
-       <!-- exercise list buttons -->
-  </div>
-  <div class="card bg-info shadow-xl mb-10 w-4/5 md:w-3/5 lg:w-1/5 h-3/5">
-    <div class="card-body">
-      <h2 class="text-center text-2xl font-bold"><span id="exercise-title"></span></h2>
-      
-      <label>Instructions:</label>
-      <ul id="exercise-instructions">
-          <!-- instructions li elements -->
-      </ul>
-      <label>Notes:</label>
-      <textarea id="exercise-note" placeholder="Add workout notes here" class="h-52 bg-info border-solid border-white rounded"></textarea>
-      <button id="log-exercise" class="btn btn-primary text-base-content text-lg md:text-lg">Log Exercise</button>
-    </div>
-  </div>
-</div>
-</section>
+      <!--Instructions Card-->
+      <div class="card bg-info shadow-xl mb-10 w-4/5 md:w-3/5 lg:w-1/5 h-3/5">
+        <div class="card-body">
+          <h2 class="text-center text-2xl font-bold"><span id="exercise-title"></span>
+            <!--appended exercise title inserts here-->
+          </h2>
+          <label>Instructions:</label>
+          <ul id="exercise-instructions">
+            <!-- appended instructions insert here -->
+          </ul>
+          <label>Notes:</label>
+          <textarea id="exercise-note" placeholder="Add workout notes here" class="h-52 bg-info border-solid border-white rounded"></textarea>
+          <button id="log-exercise" class="btn btn-primary text-base-content text-lg md:text-lg">Log Exercise</button>
+        </div>
+      </div>
+    </section>
 
+    <!--Incoming Updates Section Here-->
     <section id="tracker" class="bg-info hero min-h-screen">
       <div id="tracker">
         <h2 class="text-2xl md:text-5xl font-bold mb-10 ml-10">Track Your Weekly Progress!</h2>
         <div class="ml-10 mr-10"> <img src="./tracker.png" alt="An image of a weekly tracker" style="width: 1200px; height: 600px;"/></div>
       </div>
     </section>
-
-    </main>
+  </main>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/stg.js"></script>
